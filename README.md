@@ -39,8 +39,8 @@ Follow these instructions to set up and run the bot on your local machine.
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/rias-discord-bot.git
-   cd rias-discord-bot
+   git@github.com:YashDahiwlikar914/Rias-Discord-Bot.git
+   cd Rias-Discord-Bot.git
    ```
 
 2. **Install Dependencies**
