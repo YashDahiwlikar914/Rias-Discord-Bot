@@ -54,7 +54,7 @@ Follow these instructions to set up and run the bot on your local machine.
 
 4. **Run the Bot**
    ```bash
-   python rias_bot.py
+   python Main.py
    ```
 
 ---
