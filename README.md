@@ -83,14 +83,6 @@ Rias: I'm not a meteorologist, but I can tell you it'll be sunny whenever you're
 
 **JSON decode error on `History.json`** - The file is probably malformed. Clear it or delete it. The bot recreates it automatically.
 
-## Contributing
-
-1. Fork the project
-2. Create a feature branch: `git checkout -b feature/feature-name`
-3. Commit your changes: `git commit -m 'Add feature'`
-4. Push: `git push origin feature/feature-name`
-5. Open a Pull Request
-
 ## License
 
 MIT License.
