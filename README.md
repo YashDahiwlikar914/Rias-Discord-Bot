@@ -1,4 +1,4 @@
-# Rias Discord bot
+# Rias Discord Bot
 **This project is outdated and no longer maintained. I don't work on it anymore. The code stays up for reference, but it might break as APIs and dependencies change.** <br>
 
 Rias is a Discord bot built to act like a personal assistant with a real personality. It uses Google's Generative AI API to chat. It saves conversation history so it remembers what you were talking about, and you can tune it for different roles and styles.
