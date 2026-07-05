@@ -1,42 +1,32 @@
-# Rias - Discord Assistant Bot
+# Rias Discord bot
+**This project is outdated and no longer maintained. I don't work on it anymore. The code stays up for reference, but it might break as APIs and dependencies change.** <br>
 
-Rias is a Discord bot that works as a personal assistant with an actual personality. It uses Google's Generative AI API to handle conversations, maintains history so responses stay contextually relevant, and can be tuned for different roles and conversational styles.
+Rias is a Discord bot built to act like a personal assistant with a real personality. It uses Google's Generative AI API to chat. It saves conversation history so it remembers what you were talking about, and you can tune it for different roles and styles.
 
-## Features
+## What it does
 
-- **Conversational AI** using Google Generative AI for natural language responses
-- **Conversation history** stored in `History.json` for contextual awareness across messages
-- **Multi-channel support** across text channels and DMs
-- **Trigger recognition** via mentions, replies, DMs, and configurable keywords
+The bot handles natural language responses through the Google Generative AI API. It stores past messages in `History.json` to keep context active across the conversation. It works in both standard text channels and direct messages. You can trigger it by mentioning it, replying to one of its messages, sending a DM, or using specific keywords.
 
-## Getting Started
+## Setup
 
-### Prerequisites
+You need Python 3.7 or newer. You also need an API key from Google Generative AI and a bot token from the Discord Developer Portal.
 
-- Python 3.7+
-- Google Generative AI API key
-- Discord bot token
-
-### Installation
-
-1. Clone the repo
+First, clone the repository and move into the directory.
 
 ```bash
 git clone git@github.com:YashDahiwlikar914/Rias-Discord-Bot.git
 cd Rias-Discord-Bot
 ```
 
-2. Install dependencies
+Install the required packages.
 
 ```bash
 pip install discord google-generativeai
 ```
 
-3. Set up your keys
+Open the code and swap out the placeholders. Put your Google Generative AI key in place of `API_KEY`. Put your Discord bot token in place of `DISCORD_TOKEN`.
 
-Replace `API_KEY` in the code with your Google Generative AI key, and `DISCORD_TOKEN` with your bot token from the [Discord Developer Portal](https://discord.com/developers/applications).
-
-4. Run the bot
+Start the bot.
 
 ```bash
 python Main.py
@@ -44,45 +34,38 @@ python Main.py
 
 ## Configuration
 
-### Generative AI Settings
-
-Tune these in `generation_config`:
+You can change how the AI generates text by editing `generation_config`. 
 
 | Parameter | What it controls |
 |---|---|
-| `temperature` | Creativity. Lower = more deterministic, higher = more random. |
-| `top_p` | Probability distribution for response diversity. |
-| `top_k` | How many top tokens are considered per step. |
-| `max_output_tokens` | Hard cap on response length. |
+| `temperature` | Low means predictable. High means random. |
+| `top_p` | Controls response diversity. |
+| `top_k` | Sets how many top tokens the model looks at per step. |
+| `max_output_tokens` | Sets a hard limit on response length. |
 
-### Personality
+To change the bot's personality, edit `system_instruction`. This controls how Rias talks and what role it plays. 
 
-Edit `system_instruction` to change how Rias talks and what role it plays. This is where the personality lives.
-
-### History
-
-Conversation history is in `History.json`. Clear it if you want a fresh context, or let it persist across restarts. Your call.
+The bot saves conversation context in `History.json`. You can clear this file to start fresh or leave it alone to keep history across restarts.
 
 ## Usage
 
-Once running, the console will show `Logged On As {Bot Name}!` on successful connection.
+When the bot connects, the console prints a message confirming it logged on.
 
-Rias responds when you mention it, reply to one of its messages, or DM it. Custom trigger words can be added in the message filter section of the code.
+Rias answers when you mention it, reply to it, or send a DM. You can add custom trigger words to the message filter section in the code.
 
-**Example:**
-```
+```text
 User: @Rias How's the weather?
 Rias: I'm not a meteorologist, but I can tell you it'll be sunny whenever you're around! 😏
 ```
 
 ## Troubleshooting
 
-**Bot not responding** - Check that `API_KEY` and `DISCORD_TOKEN` are valid. Also verify that `message_content` intent is enabled in both the code and the Discord Developer Portal.
+If the bot isn't responding, check your API key and Discord token. Make sure the `message_content` intent is enabled in your code and in the Discord Developer Portal.
 
-**API error** - Confirm your key has Generative AI permissions and you haven't hit your quota. If you're close to limits, reduce `max_output_tokens`.
+If you get an API error, check your Google Generative AI permissions. Make sure you haven't hit your quota. If you are close to the limit, try lowering `max_output_tokens`.
 
-**JSON decode error on `History.json`** - The file is probably malformed. Clear it or delete it. The bot recreates it automatically.
+If you see a JSON decode error for `History.json`, the file is probably broken. Delete it. The bot will make a new one automatically.
 
 ## License
 
-MIT License.
+This project uses the MIT License.
